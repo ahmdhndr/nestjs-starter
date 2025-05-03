@@ -1,6 +1,6 @@
 {
   "name": "@ahmdhndrsyh/nestjs-starter",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Basic starter project for building scalable and maintainable NestJS applications, equipped with developer-friendly tooling and CI-ready setup.",
   "keywords": [
     "nestjs-boilerplate",
