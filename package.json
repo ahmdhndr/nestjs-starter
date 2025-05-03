@@ -96,8 +96,5 @@
   },
   "bugs": {
     "url": "https://github.com/ahmdhndr/nestjs-starter/issues"
-  },
-  "contributors": [
-    "TaiPham (https://github.com/ahmdhndr)"
-  ]
+  }
 }
