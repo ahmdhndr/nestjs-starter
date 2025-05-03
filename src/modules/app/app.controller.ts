@@ -4,10 +4,15 @@ import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly AppService: AppService) {}
+  constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): string {
-    return this.AppService.getHello();
+  getHello() {
+    return this.appService.getHello();
+  }
+
+  @Get('error')
+  getError() {
+    return this.appService.getError();
   }
 }
