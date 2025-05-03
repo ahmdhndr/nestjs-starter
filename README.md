@@ -20,16 +20,17 @@ Basic starter project for building scalable and maintainable [NestJS](https://ne
 This starter template assumes you are using `pnpm` as your package manager. Of course, `pnpm` and `npm` can be used interchangeably.
 
 ```bash
-pnpm create @ahmdhndrsyh/nestjs-starter my-app
+npx @ahmdhndrsyh/nestjs-starter my-app
 cd my-app
-pnpm run start:dev
+pnpm start:dev
 ```
 
 ### 📋 Git Hooks & Commit Rules
 
 This starter uses:
-[commitlint](https://commitlint.js.org/)
-[husky](https://typicode.github.io/husky/)
+
+- [commitlint](https://commitlint.js.org/)
+- [husky](https://typicode.github.io/husky/)
 
 Conventional commit examples:
 
