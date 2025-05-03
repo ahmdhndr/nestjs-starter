@@ -1,8 +1,8 @@
 {
   "name": "starter",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "nestjs starter",
+  "author": "Achmad Hendarsyah (@ahmdhndr)",
   "private": true,
   "license": "MIT",
   "scripts": {
