@@ -1,20 +1,13 @@
 {
-  "name": "@ahmdhndrsyh/nestjs-starter",
+  "name": "nestjs-starter",
   "version": "0.0.7",
   "description": "Basic starter project for building scalable and maintainable NestJS applications, equipped with developer-friendly tooling and CI-ready setup.",
   "keywords": [
     "nestjs-boilerplate",
     "nestjs-starter"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ahmdhndr/nestjs-starter.git"
-  },
   "author": "Achmad Hendarsyah (@ahmdhndr)",
   "license": "MIT",
-  "bin": {
-    "starter": "./bin/index.js"
-  },
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"libs/**/*.ts\"",
@@ -98,8 +91,5 @@
     "moduleNameMapper": {
       "^@app/common(|/.*)$": "<rootDir>/libs/common/src/$1"
     }
-  },
-  "bugs": {
-    "url": "https://github.com/ahmdhndr/nestjs-starter/issues"
   }
 }
