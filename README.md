@@ -24,8 +24,14 @@ You can clone this project or use `npx` as below:
 ```bash
 npx @ahmdhndrsyh/nestjs-starter my-app
 cd my-app
+mv env.example .env
 pnpm start:dev
 ```
+
+> `mv` is a `Unix` command and if you're come from `Windows`, you have 2 options:
+>
+> 1. Installing `Git Bash` and use `mv` command in the `bash`
+> 2. Using Windows `move` command.
 
 ### 📋 Git Hooks & Commit Rules
 
