@@ -4,7 +4,7 @@ import { successResponse } from '@shared/utils';
 @Injectable()
 export class AppService {
   getHello() {
-    return successResponse<string>('Welcome to NestJS starter template');
+    return successResponse<string>('Welcome to NestJS starter template 🚀');
   }
 
   getError() {
