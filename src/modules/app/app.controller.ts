@@ -1,6 +1,9 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
+import { ApiBody, ApiParam } from '@nestjs/swagger';
+import { ZodValidationPipe } from '@shared/pipes/zod-validation.pipe';
 
 import { AppService } from './app.service';
+import { GreetingDto, greetingSchema } from './dto/greeting.dto';
 
 @Controller()
 export class AppController {
@@ -9,6 +12,22 @@ export class AppController {
   @Get()
   getHello() {
     return this.appService.getHello();
+  }
+
+  @Post()
+  @ApiParam({ name: 'message', description: 'Message to be sent' })
+  @ApiBody({
+    schema: {
+      type: 'object',
+      properties: {
+        fullName: { type: 'string', example: 'John' },
+      },
+    },
+  })
+  greeting(
+    @Body(new ZodValidationPipe(greetingSchema)) greetingDto: GreetingDto,
+  ) {
+    return this.appService.greeting(greetingDto);
   }
 
   @Get('error')

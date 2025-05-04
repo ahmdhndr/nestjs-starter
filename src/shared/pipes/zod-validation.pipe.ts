@@ -3,6 +3,7 @@ import {
   BadRequestException,
   PipeTransform,
 } from '@nestjs/common';
+import { extractFirstZodError } from '@shared/utils';
 import { ZodSchema } from 'zod';
 
 export class ZodValidationPipe implements PipeTransform {
@@ -10,9 +11,10 @@ export class ZodValidationPipe implements PipeTransform {
 
   transform(value: any, _metadata: ArgumentMetadata) {
     const result = this.schema.safeParse(value);
-
     if (!result.success) {
-      throw new BadRequestException(result.error.format());
+      throw new BadRequestException({
+        message: extractFirstZodError(result.error.format()),
+      });
     }
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
