@@ -1,0 +1,7 @@
+### Welcome to the API! 🚀
+GET http://localhost:3000/api
+Content-Type: application/json
+
+### Error API Example
+GET http://localhost:3000/api/error
+Content-Type: application/json
