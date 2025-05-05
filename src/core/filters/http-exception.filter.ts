@@ -26,17 +26,19 @@ export class AllExceptionsFilter implements ExceptionFilter {
         ? exception.getResponse()
         : 'Internal server error';
 
+    const statusText = status >= 500 ? 'error' : 'failed';
+    const responseMessage =
+      typeof message === 'string' ? message : (message as any)?.message;
+    const stack =
+      process.env.NODE_ENV === 'development'
+        ? (exception as any).stack
+        : undefined;
+
     response.status(status).json({
-      status: status >= 500 ? 'error' : 'failed',
-      message:
-        typeof message === 'string'
-          ? message
-          : (message as any)?.message || 'Something went wrong',
+      status: statusText,
+      message: responseMessage,
       data: null,
-      stack:
-        process.env.NODE_ENV === 'development'
-          ? (exception as any).stack
-          : undefined,
+      stack,
     });
   }
 }

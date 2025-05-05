@@ -16,9 +16,9 @@
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
-    "test": "jest --config ./jest.config.ts",
-    "test:watch": "jest --watch --config ./jest.config.ts",
-    "test:cov": "jest --coverage --config ./jest.config.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "type-check": "tsc --noEmit",
@@ -70,7 +70,7 @@
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.7.3",
-    "typescript-eslint": "^8.20.0"
+    "typescript-eslint": "^8.31.1"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -79,7 +79,7 @@
       "ts"
     ],
     "rootDir": ".",
-    "testRegex": ".*\\.spec\\.ts$",
+    "testRegex": ".*\\.(spec|test)\\.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },
@@ -90,14 +90,11 @@
     "testEnvironment": "node",
     "roots": [
       "<rootDir>/src/"
-    ]
-  },
-  "pnpm": {
-    "ignoredBuiltDependencies": [
-      "@scarf/scarf"
     ],
-    "onlyBuiltDependencies": [
-      "@scarf/scarf"
-    ]
+    "moduleNameMapper": {
+      "^@core(.*)$": "<rootDir>/src/core/$1",
+      "^@modules(.*)$": "<rootDir>/src/modules/$1",
+      "^@shared(.*)$": "<rootDir>/src/shared/$1"
+    }
   }
 }

@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { AllExceptionsFilter } from '@core/filters';
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
