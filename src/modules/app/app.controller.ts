@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ApiBody, ApiParam } from '@nestjs/swagger';
-import { ZodValidationPipe } from '@shared/pipes/zod-validation.pipe';
+import { ZodValidationPipe } from '@shared/pipes';
 
 import { AppService } from './app.service';
 import { GreetingDto, greetingSchema } from './dto/greeting.dto';
