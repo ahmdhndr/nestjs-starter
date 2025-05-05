@@ -1,7 +1,6 @@
 import { LoggerModule } from '@core/common';
+import { AppModule } from '@modules/app';
 import { Module } from '@nestjs/common';
-
-import { AppModule } from './modules/app/app.module';
 
 @Module({
   imports: [LoggerModule, AppModule],
