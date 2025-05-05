@@ -2,16 +2,16 @@ import type { Config } from 'jest';
 
 const config: Config = {
   moduleFileExtensions: ['js', 'json', 'ts'],
-  rootDir: './src',
+  rootDir: '.',
   testEnvironment: 'node',
   testRegex: '[.](spec|test).ts$',
   transform: {
     '^.+\\.(t|j)s$': 'ts-jest',
   },
   moduleNameMapper: {
-    '^@core(.*)$': '<rootDir>/core/$1',
-    '^@modules(.*)$': '<rootDir>/modules/$1',
-    '^@shared(.*)$': '<rootDir>/shared/$1',
+    '^@core(.*)$': '<rootDir>/src/core/$1',
+    '^@modules(.*)$': '<rootDir>/src/modules/$1',
+    '^@shared(.*)$': '<rootDir>/src/shared/$1',
   },
 };
 
