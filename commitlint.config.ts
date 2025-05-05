@@ -1,4 +1,4 @@
-module.exports = {
+const commitlintConfig = {
   extends: ['@commitlint/config-conventional'],
   rules: {
     'type-enum': [
@@ -20,3 +20,5 @@ module.exports = {
     ],
   },
 };
+
+export default commitlintConfig;
