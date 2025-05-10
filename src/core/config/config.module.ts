@@ -7,8 +7,8 @@ import { envSchema } from './env.schema';
   imports: [
     NestConfigModule.forRoot({
       isGlobal: true,
-      validate: (config: Record<string, unknown>) => {
-        const result = envSchema.safeParse(config);
+      validate: (env: Record<string, unknown>) => {
+        const result = envSchema.safeParse(env);
         if (!result.success) {
           console.error(
             '❌ Invalid environment variables:',

@@ -1,5 +1,3 @@
-import { LoggerModule } from '@core/common';
-import { AppModule } from '@modules/app';
 import { Test, TestingModule } from '@nestjs/testing';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,7 +7,7 @@ describe('AppRoutingModule', () => {
 
   beforeEach(async () => {
     moduleRef = await Test.createTestingModule({
-      imports: [LoggerModule, AppModule, AppRoutingModule],
+      imports: [AppRoutingModule],
     }).compile();
   });
 

@@ -1,5 +1,6 @@
 // @ts-check
 import eslint from '@eslint/js';
+import * as pluginImport from 'eslint-plugin-import';
 import pluginJest from 'eslint-plugin-jest';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import globals from 'globals';
@@ -7,7 +8,7 @@ import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
   {
-    ignores: ['eslint.config.mjs'],
+    ignores: ['eslint.config.mjs', 'webpack.config.js'],
   },
   eslint.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
@@ -26,6 +27,11 @@ export default tseslint.config(
     },
   },
   {
+    plugins: {
+      import: {
+        rules: pluginImport.rules,
+      },
+    },
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-floating-promises': 'warn',

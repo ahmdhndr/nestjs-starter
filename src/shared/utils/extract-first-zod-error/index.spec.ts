@@ -1,4 +1,4 @@
-import { extractFirstZodError } from './extract-first-zod-error';
+import { extractFirstZodError } from './';
 
 describe('extractFirstZodError', () => {
   it('should return the first error message from field errors', () => {
