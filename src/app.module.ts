@@ -1,9 +1,9 @@
+import { LoggerModule } from '@core/common';
 import { ConfigModule } from '@core/config';
+import { BaseModule } from '@modules/base';
 import { Module } from '@nestjs/common';
 
-import { AppRoutingModule } from './app-routing.module';
-
 @Module({
-  imports: [ConfigModule, AppRoutingModule],
+  imports: [ConfigModule, LoggerModule, BaseModule],
 })
 export class AppModule {}

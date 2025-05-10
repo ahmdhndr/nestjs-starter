@@ -1,17 +1,23 @@
 import { ZodValidationPipe } from '@core/pipes';
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  InternalServerErrorException,
+  Post,
+} from '@nestjs/common';
 import { ApiBody, ApiParam } from '@nestjs/swagger';
 
-import { AppService } from './app.service';
+import { BaseService } from './base.service';
 import { GreetingDto, greetingSchema } from './dto/greeting.dto';
 
 @Controller()
-export class AppController {
-  constructor(private readonly appService: AppService) {}
+export class BaseController {
+  constructor(private readonly baseService: BaseService) {}
 
   @Get()
   getHello() {
-    return this.appService.getHello();
+    return this.baseService.getHello();
   }
 
   @Post()
@@ -27,11 +33,16 @@ export class AppController {
   greeting(
     @Body(new ZodValidationPipe(greetingSchema)) greetingDto: GreetingDto,
   ) {
-    return this.appService.greeting(greetingDto);
+    return this.baseService.greeting(greetingDto);
   }
 
   @Get('error')
   getError() {
-    return this.appService.getError();
+    return this.baseService.getError();
+  }
+
+  @Get('internal-error')
+  getInternalError() {
+    throw new InternalServerErrorException('Internal server error');
   }
 }

@@ -1,19 +1,22 @@
-import { BadRequestException } from '@nestjs/common';
+import {
+  BadRequestException,
+  InternalServerErrorException,
+} from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { BaseController } from './base.controller';
+import { BaseService } from './base.service';
 
-describe('AppController', () => {
-  let controller: AppController;
+describe('BaseController', () => {
+  let controller: BaseController;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      controllers: [AppController],
-      providers: [AppService],
+      controllers: [BaseController],
+      providers: [BaseService],
     }).compile();
 
-    controller = module.get<AppController>(AppController);
+    controller = module.get<BaseController>(BaseController);
   });
 
   it('should be defined', () => {
@@ -42,5 +45,11 @@ describe('AppController', () => {
 
   it('should throw bad request error structure', () => {
     expect(() => controller.getError()).toThrow(BadRequestException);
+  });
+
+  it('should throw internal server error correctly', () => {
+    expect(() => controller.getInternalError()).toThrow(
+      InternalServerErrorException,
+    );
   });
 });

@@ -1,3 +1,3 @@
 export * from './env';
 export * from './extract-first-zod-error';
-export * from './response.helper';
+export * from './success-response';
