@@ -4,7 +4,7 @@ import { successResponse } from '@shared/utils';
 import { GreetingDto } from './dto/greeting.dto';
 
 @Injectable()
-export class AppService {
+export class BaseService {
   getHello() {
     return successResponse<string>('Welcome to NestJS starter template 🚀');
   }

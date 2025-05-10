@@ -1,7 +1,7 @@
 import { ConfigModule } from '@core/config';
+import { BaseModule } from '@modules/base';
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppModule } from './app.module';
 
 describe('AppModule', () => {
@@ -9,7 +9,7 @@ describe('AppModule', () => {
 
   beforeEach(async () => {
     moduleRef = await Test.createTestingModule({
-      imports: [AppRoutingModule, ConfigModule, AppModule],
+      imports: [ConfigModule, AppModule, BaseModule],
     }).compile();
   });
 
