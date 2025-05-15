@@ -24,11 +24,9 @@ describe('BaseController', () => {
   });
 
   it('should return the success response', () => {
-    expect(controller.getHello()).toEqual({
-      status: 'success',
-      message: 'OK',
-      data: 'Welcome to NestJS starter template 🚀',
-    });
+    expect(controller.getHello()).toEqual(
+      'Welcome to NestJS starter template 🚀',
+    );
   });
 
   it('should return the greeting message', () => {
@@ -36,11 +34,7 @@ describe('BaseController', () => {
       fullName: 'John',
     };
 
-    expect(controller.greeting(greetingDto)).toEqual({
-      status: 'success',
-      message: 'Hello John',
-      data: null,
-    });
+    expect(controller.greeting(greetingDto)).toEqual('Hello John');
   });
 
   it('should throw bad request error structure', () => {
