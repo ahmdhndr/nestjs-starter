@@ -12,10 +12,8 @@ import { ApiBody, ApiParam } from '@nestjs/swagger';
 
 import { BaseService } from './base.service';
 import { GreetingDto, greetingSchema } from './dto/greeting.dto';
+import { ResponseDto } from './dto/response.dto';
 
-class ResponseDto {
-  data: string;
-}
 @Serialize(ResponseDto)
 @Controller()
 export class BaseController {
